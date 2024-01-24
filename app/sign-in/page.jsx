@@ -1,6 +1,6 @@
 'use client'
 import {actionLogin} from './action'
-import {useFormState} from 'react-dom'
+import {useFormState, useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -8,10 +8,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BGimages from 'public/assets/images/BG-pink-yell.jpg'
 import Logo from '/public/assets/images/logo-dark.png'
-import { useEffect } from 'react';
 
 
-export default function sign_in() {                                   
+export default function Sign_in() {                                   
             const initState = {
                 alerts: ''
             }

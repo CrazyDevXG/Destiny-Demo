@@ -7,7 +7,7 @@ import { imageLoader } from "/components/utils/loader"
 
   
 
-export default function mySetting() {  
+export default function MySetting() {  
 
     const [myData, setMyData] = useState({});    
 

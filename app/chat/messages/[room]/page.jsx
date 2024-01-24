@@ -1,6 +1,4 @@
 'use client'
-import Link from 'next/link'
-import Image from 'next/image'
 import USidebar from "/components/nav/sidebar"  
 import Rooms from '/components/ui/chat/rooms'
 import HeadBarMs from '/components/ui/chat/headMs'

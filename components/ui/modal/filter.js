@@ -19,7 +19,7 @@ export function FilterModal() {
                         
                 <div className="space-y-5 mt-7">
                     <div> 
-                    <label htmlFor="gender" className="text-base">I'm Looking For :</label>
+                    <label htmlFor="gender" className="text-base">I&apos;m Looking For :</label>
                             <select id="gender" name="gender" className="w-full mt-3">
                                 <option value="Male">Man</option>
                                 <option value="Female">Women</option>

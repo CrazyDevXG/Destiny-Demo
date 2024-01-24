@@ -1,13 +1,10 @@
 'use client'
-import React, { useState } from 'react'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import Link from 'next/link'
-import Image from 'next/image'
-import Logo from '/public/assets/images/logo-icon.png'
 
 export default function register() {
-    const [startDate, setStartDate] = useState(""); 
+  
 
 
   return (
