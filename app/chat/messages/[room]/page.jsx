@@ -19,7 +19,7 @@ export default function ChatMessages({ params }) {
                 setTextChat(callData);
             }
             getTextChat();
-        },[]);
+        });
         
     return (
       <>              

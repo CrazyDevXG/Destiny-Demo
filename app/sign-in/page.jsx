@@ -26,7 +26,7 @@ export default function Sign_in() {
             useEffect(()=>{
                 if(state.alerts){notify();}
 
-            },[state])
+            })
 
   return (
     <>
