@@ -17,51 +17,51 @@ export function Compo_Suggest(){
     
                                 <div className="space-y-4 capitalize text-xs font-normal mt-5 mb-2 text-gray-500 dark:text-white/80">    
                                     <div className="flex items-center gap-3">
-                                        <Link href="/user/profile">
+                                        <Link href="/profile/test1">
                                             <Image src={Avatar02} alt="" className="bg-gray-200 rounded w-10 h-10" />
                                         </Link>
                                         <div className="flex-1">
-                                            <Link href="/user/profile"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 1</h4></Link>
+                                            <Link href="/profile/test1"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 1</h4></Link>
                                             <div className="mt-0.5"> <ion-icon name="male-female"></ion-icon>female : 25 </div>
                                         </div>
                                         <button type="button" className="text-sm rounded-full py-1.5 px-4 font-semibold text-white bg-primary"> Follow </button>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <Link href="/user/profile">
+                                        <Link href="/profile/test1">
                                             <Image src={Avatar02} alt="" className="bg-gray-200 rounded w-10 h-10" />
                                         </Link>
                                         <div className="flex-1">
-                                            <Link href="/user/profile"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 2</h4></Link>
+                                            <Link href="/profile/test1"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 2</h4></Link>
                                             <div className="mt-0.5"> <ion-icon name="male-female"></ion-icon>female : 20 </div>
                                         </div>
                                         <button type="button" className="text-sm rounded-full py-1.5 px-4 font-semibold text-white bg-primary"> Follow </button>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <Link href="/user/profile">
+                                        <Link href="/profile/test1">
                                             <Image src={Avatar02} alt="" className="bg-gray-200 rounded w-10 h-10" />
                                         </Link>
                                         <div className="flex-1">
-                                            <Link href="/user/profile"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 3</h4></Link>
+                                            <Link href="/profile/test1"><h4 className="font-semibold text-sm text-black dark:text-white"> User name 3</h4></Link>
                                             <div className="mt-0.5"> <ion-icon name="male-female"></ion-icon>female : 31  </div>
                                         </div>
                                         <button type="button" className="text-sm rounded-full py-1.5 px-4 font-semibold text-white bg-primary"> Follow </button>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <Link href="/user/profile">
+                                        <Link href="/profile/test1">
                                             <Image src={Avatar02} alt="" className="bg-gray-200 rounded w-10 h-10" />
                                         </Link>
                                         <div className="flex-1">
-                                            <Link href="/user/profile"><h4 className="font-semibold text-sm text-black dark:text-white">  User name 4</h4></Link>
+                                            <Link href="/profile/test1"><h4 className="font-semibold text-sm text-black dark:text-white">  User name 4</h4></Link>
                                             <div className="mt-0.5"> <ion-icon name="male-female"></ion-icon>male : 29 </div>
                                         </div>
                                         <button type="button" className="text-sm rounded-full py-1.5 px-4 font-semibold text-white bg-primary"> Follow </button>
                                     </div> 
                                     <div className="flex items-center gap-3">
-                                        <Link href="/user/profile">
+                                        <Link href="/profile/test1">
                                             <Image src={Avatar02} alt="" className="bg-gray-200 rounded w-10 h-10" />
                                         </Link>
                                         <div className="flex-1">
-                                            <Link href="/user/profile"><h4 className="font-semibold text-sm text-black dark:text-white">  User name 5</h4></Link>
+                                            <Link href="/profile/test1"><h4 className="font-semibold text-sm text-black dark:text-white">  User name 5</h4></Link>
                                             <div className="mt-0.5"> <ion-icon name="male-female"></ion-icon>any : 25 </div>
                                         </div>
                                         <button type="button" className="text-sm rounded-full py-1.5 px-4 font-semibold text-white bg-primary"> Follow </button>
@@ -130,13 +130,13 @@ export function Compo_Suggest(){
                                         <ul className="-ml-2 uk-slider-items w-[calc(100%+0.5rem)]">                                            
                                             <li className="w-1/2 pr-2">                                            
                                                 <div className="flex flex-col items-center shadow-sm p-2 rounded-xl border1">
-                                                    <Link href="/user/profile"> 
+                                                    <Link href="/profile/test1"> 
                                                         <div className="relative w-16 h-16 mx-auto mt-2">
                                                             <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full" />
                                                         </div>
                                                     </Link>
                                                     <div className="mt-5 text-center w-full">
-                                                        <Link href="/user/profile"> <h5 className="font-semibold"> Martin Gray</h5> </Link>
+                                                        <Link href="/profile/test1"> <h5 className="font-semibold"> Martin Gray</h5> </Link>
                                                         <div className="text-xs text-gray-400 mt-0.5 font-medium"> <ion-icon name="male-female"></ion-icon>female : 25</div>
                                                         <button type="button" className="bg-primary block font-semibold text-white mt-4 py-1.5 rounded-lg text-sm w-full border1"> Follow </button>
                                                     </div>
@@ -144,13 +144,13 @@ export function Compo_Suggest(){
                                             </li>
                                             <li className="w-1/2 pr-2">
                                                 <div className="flex flex-col items-center shadow-sm p-2 rounded-xl border1">
-                                                    <Link href="/user/profile"> 
+                                                    <Link href="/profile/test1"> 
                                                         <div className="relative w-16 h-16 mx-auto mt-2">
                                                             <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full" />
                                                         </div>
                                                     </Link>
                                                     <div className="mt-5 text-center w-full">
-                                                        <Link href="/user/profile"> <h5 className="font-semibold"> Alexa Park</h5> </Link>
+                                                        <Link href="/profile/test1"> <h5 className="font-semibold"> Alexa Park</h5> </Link>
                                                         <div className="text-xs text-gray-400 mt-0.5 font-medium"> <ion-icon name="male-female"></ion-icon>female : 25</div>
                                                         <button type="button" className="bg-primary block font-semibold text-white mt-4 py-1.5 rounded-lg text-sm w-full border1"> Follow </button>
                                                     </div>
@@ -158,13 +158,13 @@ export function Compo_Suggest(){
                                             </li>
                                             <li className="w-1/2 pr-2">
                                                 <div className="flex flex-col items-center shadow-sm p-2 rounded-xl border1">
-                                                    <Link href="/user/profile"> 
+                                                    <Link href="/profile/test1"> 
                                                         <div className="relative w-16 h-16 mx-auto mt-2">
                                                             <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full" />
                                                         </div>
                                                     </Link>
                                                     <div className="mt-5 text-center w-full">
-                                                        <Link href="/user/profile"> <h5 className="font-semibold"> James Lewis</h5> </Link>
+                                                        <Link href="/profile/test1"> <h5 className="font-semibold"> James Lewis</h5> </Link>
                                                         <div className="text-xs text-gray-400 mt-0.5 font-medium"> <ion-icon name="male-female"></ion-icon>female : 20</div>
                                                         <button type="button" className="bg-primary block font-semibold text-white mt-4 py-1.5 rounded-lg text-sm w-full border1"> Follow </button>
                                                     </div>

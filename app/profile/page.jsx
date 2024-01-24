@@ -14,7 +14,7 @@ import { Co_Interests } from '/components/ui/profile/Co_interests'
 
 
 
-    export default function Profile() {  
+    export default function MyProfile() {  
 
         const [myData, setMyData] = useState({});
   

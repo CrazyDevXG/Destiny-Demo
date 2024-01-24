@@ -1,18 +1,19 @@
-
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import USidebar from "/components/nav/sidebar"  
 import Avatar06 from '/public/assets/images/avatars/avatar-6.jpg'
 
-import { Co_Gallery } from '/components/profile/Co_gallery'
-import { Co_Video } from '/components/profile/Co_video'
-import { PreviewModal } from '/components/profile/Modal_preview'
-import { Co_Status } from '/components/profile/Co_status'
-import { Co_Interests } from '/components/profile/Co_interests'
+import { PreviewModal } from '/components/ui/profile/Modal_preview'
+
+import { Co_Gallery } from '/components/ui/profile/Co_gallery'
+import { Co_About } from '/components/ui/profile/Co_about'
+import { Co_bioStatus } from '/components/ui/profile/Co_status'
+import { Co_Interests } from '/components/ui/profile/Co_interests'
 
 
 
-export default function Profile() {  
+export default function UserProfile() {  
 
     return (
       <>  
@@ -33,10 +34,8 @@ export default function Profile() {
                             <h3 className="md:text-xl text-base font-semibold text-black dark:text-white"><span className='font-semibold text-blue-500'><ion-icon name="shield-checkmark" uk-tooltip="Confirmed Account"></ion-icon></span>Name</h3>                              
                             <p className="sm:text-sm text-gray-600 mt-1 font-normal text-xs"><ion-icon name="flash-off"></ion-icon>Offline</p> 
                                                        
-                            <Co_Status />
-                                 
-                            <Co_Interests /> 
-
+                            <Co_bioStatus />                                 
+                            
                             <div className="flex md:items-end justify-between md:mt-8 mt-4 max-md:flex-col gap-4">
                                 <div className="flex sm:gap-10 gap-6 sm:text-sm text-xs max-sm:absolute max-sm:top-10 max-sm:left-36">
                                     <div>
@@ -90,8 +89,8 @@ export default function Profile() {
                     <div id="story_tab" className="uk-switcher">      
                     
                     <Co_Gallery />
-
-                    <Co_Video />         
+                    <Co_Interests />      
+                    <Co_About />        
                         
                         
                     </div>

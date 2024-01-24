@@ -59,149 +59,149 @@ export default function Home({userData}) {
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Jesse Steeve</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Jesse Steeve</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> John Michael</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> John Michael</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Martin Gray</h4> </Link>
-                                    <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
-                                    
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
-                                    <div className="relative w-30 h-30 mx-auto">
-                                        <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
-                                    </div>
-                                </Link>
-                                <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Monroe Parker</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Martin Gray</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> James Lewis </h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Monroe Parker</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Alexa stella </h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> James Lewis </h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Jesse Steeve</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Alexa stella </h4> </Link>
+                                    <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
+                                    
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
+                                <Link href="/profile/test1">
+                                    <div className="relative w-30 h-30 mx-auto">
+                                        <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
+                                    </div>
+                                </Link>
+                                <div className="mt-5 text-center w-full">
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Jesse Steeve</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
                             
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> John Michael</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> John Michael</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Martin Gray</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Martin Gray</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Monroe Parker</h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Monroe Parker</h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> James Lewis </h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> James Lewis </h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center shadow-sm p-2 rounded-xl bg-white border1 dark:bg-dark2">
-                                <Link href="user/profile">
+                                <Link href="/profile/test1">
                                     <div className="relative w-30 h-30 mx-auto">
                                         <Image src={Avatar02} alt="" className="h-full object-cover rounded shadow w-full"/>
                                     </div>
                                 </Link>
                                 <div className="mt-5 text-center w-full">
-                                    <Link href="user/profile"> <h4 className="font-semibold text-sm text-black dark:text-white"> Alexa stella </h4> </Link>
+                                    <Link href="/profile/test1"> <h4 className="font-semibold text-sm text-black dark:text-white"> Alexa stella </h4> </Link>
                                     <div className="mt-1"> <ion-icon name="male-female"></ion-icon>female : 25 years</div>
                                     
                                 </div>

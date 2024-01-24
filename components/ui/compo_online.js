@@ -13,7 +13,7 @@ export function Compo_Online(){
                             <ul className="uk-slider-items w-[calc(100%+14px)]">
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">                                                                              
+                                    <Link href="/profile/test1">                                                                              
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />                                                                                        
                                             </div>
@@ -22,7 +22,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                <Link href="/user/profile">
+                                <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -31,7 +31,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -40,7 +40,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -49,7 +49,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -58,7 +58,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -67,7 +67,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -76,7 +76,7 @@ export function Compo_Online(){
                                 </li> 
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -85,7 +85,7 @@ export function Compo_Online(){
                                 </li>
 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
@@ -94,7 +94,7 @@ export function Compo_Online(){
                                 </li>
                                 
                                 <li className="md:pr-2.5 pr-2 hover:scale-[1.2] hover:-rotate-2 duration-300">
-                                    <Link href="/user/profile">
+                                    <Link href="/profile/test1">
                                         <div className="md:w-20 md:h-20 w-12 h-12 relative md:border-4 border-2 shadow border-white rounded-full overflow-hidden dark:border-slate-700">
                                             <Image src={Avatar02} alt="" className="absolute w-full h-full object-cover" />
                                         </div>
