@@ -6,6 +6,7 @@ const nextConfig = {
         MYSQL_NAME: 'destiny_loveDB',
         MYSQL_USER: 'crazydev_dsLove',
         MYSQL_PASSWD: 'fwI$2735e',
+        NEXT_API_URL: 'https://destiny-demo.vercel.app/api',
         NEXTAUTH_SECRET: 'CrazyDev_NextJS_DestinyLove',
       },
   

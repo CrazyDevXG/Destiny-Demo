@@ -13,7 +13,7 @@ import { cookies } from 'next/headers'
             const { payload } = await jwtVerify(userToken, secretKey);
             const  data = payload.user;
 
-            const response = await fetch(`http://localhost:3000/api/get/user/${data.myID}`,{
+            const response = await fetch(`${process.env.NEXT_API_URL}/get/user/${data.myID}`,{
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 cache: 'no-store', 
@@ -26,7 +26,7 @@ import { cookies } from 'next/headers'
 
             export async function callUser({uid}){           
     
-                const response = await fetch(`http://localhost:3000/api/get/user/${uid}`,{
+                const response = await fetch(`${process.env.NEXT_API_URL}/get/user/${uid}`,{
                     method: "GET",
                     headers: { "Content-Type": "application/json" },
                     cache: 'no-store', 
@@ -49,7 +49,7 @@ import { cookies } from 'next/headers'
 
             if(payload.user){
                 const getUser = payload.user; 
-                const res = await fetch(`http://localhost:3000/api/get/user/img/${getUser.myID}`,{
+                const res = await fetch(`${process.env.NEXT_API_URL}/get/user/img/${getUser.myID}`,{
                     method: "GET",
                     headers: { "Content-Type": "application/json" },
                     cache: 'no-store', 
@@ -73,7 +73,7 @@ import { cookies } from 'next/headers'
 
             if(payload.user){
                 const getUser = payload.user; 
-                const res = await fetch(`http://localhost:3000/api/get/chat/${getUser.myID}`,{
+                const res = await fetch(`${process.env.NEXT_API_URL}/get/chat/${getUser.myID}`,{
                     method: "GET",
                     headers: { "Content-Type": "application/json" },
                     cache: 'no-store', 
@@ -86,7 +86,7 @@ import { cookies } from 'next/headers'
 
         export async function callMessages({roomChatID}){                  
                 
-            const response = await fetch(`http://localhost:3000/api/get/chat/messages/${roomChatID}`, {                   
+            const response = await fetch(`${process.env.NEXT_API_URL}/get/chat/messages/${roomChatID}`, {                   
             method: "GET",
             headers: { "Content-Type": "application/json" },
             cache: 'no-store',        

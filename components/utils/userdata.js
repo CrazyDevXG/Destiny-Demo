@@ -9,13 +9,13 @@ import { headers } from 'next/headers'
         
                   
 
-            const resmyID = await fetch(`http://localhost:3000/api/user/${getHeaders.myID}`,{
+            const resmyID = await fetch(`${process.env.NEXT_API_URL}/user/${getHeaders.myID}`,{
             method: "GET",
             headers: { "Content-Type": "application/json" },
             });
             const myUser = resmyID.json()
 
-            const resmyProImg = await fetch(`http://localhost:3000/api/user/img/${getHeaders.myProImg}`,{
+            const resmyProImg = await fetch(`${process.env.NEXT_API_URL}/user/img/${getHeaders.myProImg}`,{
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
             });

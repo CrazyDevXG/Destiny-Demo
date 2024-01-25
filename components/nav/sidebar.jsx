@@ -28,7 +28,7 @@ export default function UserSidebar() {
     
 
     function callApiOnline(uid){  
-        fetch(`http://localhost:3000/api/update/user/online`, {                   
+        fetch(`${process.env.NEXT_API_URL}/update/user/online`, {                   
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uid })
