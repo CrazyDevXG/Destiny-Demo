@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { useEffect, useState } from 'react'
-import { callUser } from '/components/utils/callApiFunction.js'
+import { callMyProfile } from '/components/utils/callApiFunction.js'
 import { Compo_Online } from '/components/ui/compo_online'
 import { Compo_Suggest } from '/components/ui/compo_suggest'
 import { FilterModal } from '/components/ui/modal/filter'
@@ -12,17 +12,17 @@ import { FilterModal } from '/components/ui/modal/filter'
 import Avatar02 from '/public/assets/images/avatars/avatar-2.jpg'
 import  UserSidebar  from '/components/nav/sidebar' 
  
-export default function Home({userData}) {  
+export default function Home() {  
 
     const [myData, setMyData] = useState([]);
 
     useEffect(()=>{
         const getMyData = async() =>{
-            const queryData = await callUser(userData); 
+            const queryData = await callMyProfile(); 
             setMyData(queryData);
         }
         getMyData();
-    },[userData]); 
+    }); 
 
     return (      
             <>                       

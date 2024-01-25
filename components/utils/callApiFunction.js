@@ -18,9 +18,9 @@ import { cookies } from 'next/headers'
                 headers: { "Content-Type": "application/json" },
                 cache: 'no-store', 
                 });
-                const userData = response.json();
+                const myData = response.json();
 
-            return userData;
+            return myData;
             
             }
 
