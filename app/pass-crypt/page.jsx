@@ -12,7 +12,7 @@ export default function New_CryptPassword() {
 
              const handleSubmit = async (e, path) => {
               e.preventDefault();
-              const response = await fetch(`/api/user/${path}`, {
+              const response = await fetch(`/api/update/user/${path}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ userID, password })
@@ -50,7 +50,7 @@ export default function New_CryptPassword() {
                         placeholder="New Password" 
                         required /> 
 
-            <button onClick={e => handleSubmit(e, "update-pass")} 
+            <button onClick={e => handleSubmit(e, "passwd")} 
             type="submit" className="font-medium rounded-lg bg-slate-700 mx-6 py-2 px-8 text-white"> 
             <span>Hash Bcrypt</span> 
             </button>

@@ -24,9 +24,9 @@ export default function UserSidebar() {
             setMyData(queryData);
         }
         getMyData();
-    },[]); 
+    }); 
     
-
+    useEffect(()=>{
     function callApiOnline(uid){  
         fetch(`${process.env.NEXT_API_URL}/update/user/online`, {                   
         method: "PUT",
@@ -35,7 +35,7 @@ export default function UserSidebar() {
     });
     }    
     callApiOnline(uid);
-      
+    });
     return (
        <>
             <div className="top-0 left-0 z-40 max-md:top-auto max-md:bottom-0 fixed">
