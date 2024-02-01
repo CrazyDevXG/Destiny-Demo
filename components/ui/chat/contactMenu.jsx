@@ -1,11 +1,10 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import { imageLoader } from "/components/utils/loader.js"
 
-import Avatar02 from '/public/assets/images/avatars/avatar-2.jpg'
 
-
-export default function ContactMenu() {
+export default function ContactMenu({friendInfo}) {
   
     return (      
          <>              
@@ -15,14 +14,14 @@ export default function ContactMenu() {
 
                             <div className="w-full h-1.5 bg-gradient-to-r to-purple-500 via-red-500 from-pink-500 -mt-px"></div>
                             
-                            <div className="py-10 text-center text-sm pt-20">
-                                <Image src={Avatar02} className="w-24 h-24 rounded-full mx-auto mb-3" alt=""/>
+                            <div className="py-10 text-center text-sm pt-20">                               
+                                {friendInfo.user_profile_img ?(<Image loader={imageLoader} src={`/${friendInfo.user_profile_img}`} width={280} height={280}  alt="profile" priority={true} className="w-24 h-24 rounded-full mx-auto mb-3" />):null}
                                 <div className="mt-8">
-                                    <div className="md:text-xl text-base font-medium text-black dark:text-white"> User Name 1  </div>
-                                    <div className="text-gray-500 text-sm mt-1 dark:text-white/80">@usertesting</div>
+                                    <div className="md:text-xl text-base font-medium text-black dark:text-white"> {friendInfo.user_fulname} </div>
+                                    <div className="text-gray-500 text-sm mt-1 dark:text-white/80">{friendInfo.user_at}</div>
                                 </div>
                                 <div className="mt-5">
-                                     <Link href="profile" className="inline-block rounded-full px-4 py-1.5 text-sm font-semibold bg-secondery">View profile</Link>
+                                     <Link href={`/profile/${friendInfo.user_id}`} className="inline-block rounded-full px-4 py-1.5 text-sm font-semibold bg-secondery">View profile</Link>
                                 </div>
                             </div>
  

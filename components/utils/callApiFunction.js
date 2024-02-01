@@ -13,54 +13,57 @@ import { cookies } from 'next/headers'
             const { payload } = await jwtVerify(userToken, secretKey);
             const  data = payload.user;
 
-            const response = await fetch(`${process.env.NEXT_API_URL}/get/user/${data.myID}`,{
+            const res = await fetch(`${process.env.NEXT_API_URL}/get/user/${data.myID}`,{
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
                 cache: 'no-store', 
-                });
-                const myData = response.json();
+                });             
 
-            return myData;
+            return res.json();
             
             }
 
-            export async function callUser({uid}){           
-    
-                const response = await fetch(`${process.env.NEXT_API_URL}/get/user/${uid}`,{
-                    method: "GET",
-                    headers: { "Content-Type": "application/json" },
-                    cache: 'no-store', 
-                    });
-                    const userData = response.json();
-    
-                return userData;
-                
-                }
 
-
-        export async function callMyPhoto(){ 
+        export async function callFindUser(){ 
             const secretJWK = {
                 kty: 'oct',
                 k: process.env.NEXTAUTH_SECRET 
             }
             const secretKey = await importJWK(secretJWK, 'HS256');
             const userToken = cookies().get('userToken').value;
-            const { payload } = await jwtVerify(userToken, secretKey);
+            const { payload } = await jwtVerify(userToken, secretKey);           
 
-            if(payload.user){
-                const getUser = payload.user; 
-                const res = await fetch(`${process.env.NEXT_API_URL}/get/user/img/${getUser.myID}`,{
+                const notfind = payload.user; 
+                const res = await fetch(`${process.env.NEXT_API_URL}/get/user/find/${notfind.myID}`,{
                     method: "GET",
                     headers: { "Content-Type": "application/json" },
                     cache: 'no-store', 
                 });
-                const myProImg = res.json();
-                return myProImg;
-            }
+                
+                return res.json();
+            
         }
 
-
         
+
+        export async function callMyRooms(){ 
+            const secretJWK = {
+                kty: 'oct',
+                k: process.env.NEXTAUTH_SECRET 
+            }
+            const secretKey = await importJWK(secretJWK, 'HS256');
+            const userToken = cookies().get('userToken').value;
+            const { payload } = await jwtVerify(userToken, secretKey); 
+            const getUser = payload.user;
+                        
+            const res = await fetch(`${process.env.NEXT_API_URL}/get/chat/${getUser.myID}`,{
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                cache: 'no-store', 
+            });                
+            return res.json();
+                
+        }
 
         export async function callChatList(){ 
             const secretJWK = {
@@ -70,30 +73,69 @@ import { cookies } from 'next/headers'
             const secretKey = await importJWK(secretJWK, 'HS256');
             const userToken = cookies().get('userToken').value;
             const { payload } = await jwtVerify(userToken, secretKey); 
+            const getUser = payload.user;
 
-            if(payload.user){
-                const getUser = payload.user; 
-                const res = await fetch(`${process.env.NEXT_API_URL}/get/chat/${getUser.myID}`,{
+
+            const myRooms = await fetch(`${process.env.NEXT_API_URL}/get/chat/${getUser.myID}`,{
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                cache: 'no-store', 
+            }).then((response) => response.json());     
+        
+            const chatLists = await Promise.all(
+                myRooms.map((result) =>
+                fetch(`${process.env.NEXT_API_URL}/get/chat/${getUser.myID}/${result.room_id}`,{
                     method: "GET",
                     headers: { "Content-Type": "application/json" },
                     cache: 'no-store', 
-                });
-                const myChatRooms = res.json();
-                return myChatRooms;
-            }
+                }).then((response) => response.json())
+              )
+            );               
+
+                  
+            return  chatLists;
+                    
+                
         }
+
+
+        export async function callFriendInfo({friendId}){           
+    
+            const res = await fetch(`${process.env.NEXT_API_URL}/get/friend/${friendId}`,{
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                cache: 'no-store', 
+                });                   
+
+            return res.json();
+            
+            }
+
+            export async function callFriendAll({friendId}){           
+    
+                const res = await fetch(`${process.env.NEXT_API_URL}/get/friend/all/${friendId}`,{
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" },
+                    cache: 'no-store', 
+                    });                   
+    
+                return res.json();
+                
+                }
+
+
 
 
         export async function callMessages({roomChatID}){                  
                 
             const response = await fetch(`${process.env.NEXT_API_URL}/get/chat/messages/${roomChatID}`, {                   
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-            cache: 'no-store',        
-        });
-        const dataChat = response.json();
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                cache: 'no-store',        
+                });
+       
 
-        return dataChat;
-        }    
+            return response.json();
+            }    
 
 

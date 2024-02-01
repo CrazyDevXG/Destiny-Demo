@@ -4,24 +4,21 @@ import Image from 'next/image'
 import date from 'date-and-time'
 import { useEffect, useRef, useState  } from 'react'
 import { imageLoader } from "/components/utils/loader.js"
-import Avatar02 from '/public/assets/images/avatars/avatar-2.jpg'
 
 
-export default function BoxMessages({ textChat }) {
+export default function BoxMessages({ messages, srcPhoto, myData, friendInfo}) {  
 
-    const [messages, setMessage] = useState(textChat);  
-    
     const refLastMessages = useRef(null);  
-    const scrollToBottom= () =>{
-        refLastMessages.current?.lastElementChild?.scrollIntoView({ behavior: "smooth" })
+    const scrollToBottom = () =>{
+        refLastMessages.current?.scrollIntoView({ behavior: "smooth" })
     }
- 
-    useEffect(() => {     
-        
-        setMessage(textChat);          
+
+    useEffect(() => {       
+
         scrollToBottom();
 
-    }, [textChat]);  
+ 
+      }, [messages]);
        
   
     return (      
@@ -36,24 +33,36 @@ export default function BoxMessages({ textChat }) {
                                     </div>                             
                                 </div> 
 
-                                { messages.map((messages) => (   
-                                <div className={messages.mes_uid == 'ds10001' ? 'flex gap-2 flex-row-reverse items-end' : 'flex gap-3'} key={messages.mes_id} ref={refLastMessages} >
-                                    {messages.mes_uid !== 'ds10001' ? 
-                                    <Image src={Avatar02} alt="" className="w-9 h-9 rounded-full shadow"/> 
+                            { messages.map((messages, key) => (   
+                                <div className={messages.userId == myData.user_id ? 'flex gap-2 flex-row-reverse items-end' : 'flex gap-3'} key={key} ref={refLastMessages} >
+                                    {messages.userId !== myData.user_id ? 
+                                    <Image loader={imageLoader} src={`/${friendInfo.user_profile_img}`} width={80} height={80} alt="profile" className="w-9 h-9 rounded-full shadow"/> 
                                     : null} 
+                                     
 
-                                    <div className={messages.mes_uid == 'ds10001' ? 
-                                    'px-4 py-2 rounded-[20px] max-w-sm bg-gradient-to-tr from-pink-500 to-red-400 text-white shadow' : 
+                                    <div className={messages.userId == myData.user_id ? 
+                                    'px-4 py-2 rounded-[20px] max-w-sm bg-gradient-to-tr from-pink-400 to-red-400 text-white shadow' : 
                                     'px-4 py-2 rounded-[20px] max-w-sm bg-secondery'}
-                                    >{messages.mes_text}
+                                    >{messages.text}
                                     </div>
 
-                                    <div className="text-gray-400 text-xs dark:text-white/70">{date.format(new Date(messages.mes_time), 'HH:mm')}</div> 
+                                    <div className="text-gray-400 text-xs dark:text-white/70">{date.format(new Date(messages.time), 'HH:mm')}</div> 
                                 </div>  
-                                 ))
-                                } 
+                            ))}
+
+                            { srcPhoto.map((srcPhoto, key) => (
+                                <div key={key}>
+                                <div className={srcPhoto.userId == myData.user_id ? 
+                                    'px-4 py-2 rounded-[20px] max-w-sm bg-gradient-to-tr from-pink-400 to-red-400 text-white shadow' : 
+                                    'px-4 py-2 rounded-[20px] max-w-sm bg-secondery'}
+                                    >
+                                {srcPhoto.photo ? <Image src={srcPhoto.photo}  width={240} height={110} /> : null}
+                                </div>
+                                </div>
+                            ))}
                                 
                             </div>
+                            <div id="side-chat" className="bg-slate-100/40 backdrop-blur w-full h-full dark:bg-slate-800/40 z-40 fixed inset-0 max-md:-translate-x-full md:hidden" uk-toggle="target: #side-chat ; cls: max-md:-translate-x-full"></div>
                         </div>                                           
     
         </>  

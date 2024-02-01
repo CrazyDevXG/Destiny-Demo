@@ -1,5 +1,5 @@
 
-import { query } from "/components/server/connect/db";
+import { query } from "/server/connect/db";
 import { SignJWT, importJWK } from "jose";
 import bcrypt from 'bcrypt';
 

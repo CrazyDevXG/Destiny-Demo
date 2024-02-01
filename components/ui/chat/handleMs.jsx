@@ -1,50 +1,37 @@
 'use client'
 import Link from 'next/link'
-import { useEffect, useRef, useState  } from 'react'
-import { callUser } from '/components/utils/callApiFunction'
+import { useState  } from 'react'
 
+export default function HandleInputMs({socket}) {
+    
+            const [newMessage, setNewMessage] = useState('');      
 
+            const sendMessage = () => {        
+                
+                  const msgData = {               
+                    msg: newMessage,                
+                  };
 
-export default function HandleInputMs({userData}) {
+                  socket.emit("send_msg", msgData);
+                  setNewMessage("");
+                
+              };
 
-    const [message, setMessage] = useState("");
-    const [myData, setMyData] = useState([]);
-
-        
-      
-        const handleSubmit = (e) => {
-
-          let dataMS = {
-            message,
-          };
-            console.log(dataMS);
-
-          fetch(`http://localhost:3000/api/send/textMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dataMS),
-
-          }).then((res) => {   
-            if (res.status === 200) {             
-              setMessage("");
-            }
-          });
-        };
-
-        const handleSendMessage = () => {
-          if (message.length > 0) {
-            handleSubmit();
-          }
-        };
-        const handleKeyPressed = (event) => {
-          if (event.code === "Enter" && message.length > 0) {
-            handleSubmit();
-          }
-        };
+              const handleSendMessage = () => {
+                if (newMessage.length > 0) {
+                  sendMessage();
+                }
+              };
+              const handleKeyPressed = (event) => {
+                if (event.key === "Enter" && newMessage.length > 0) {
+                  sendMessage();
+                }
+              };
+ 
   
     return (      
          <>     
-                        <form action={handleSendMessage}>
+                        
                         <div className="flex items-center md:gap-4 gap-2 md:p-3 p-2 overflow-hidden"> 
                             <div id="message__wrap" className="flex items-center gap-2 h-full dark:text-white -mt-1.5">                                
                                 <button type="button"  className="shrink-0">
@@ -77,7 +64,7 @@ export default function HandleInputMs({userData}) {
                                 </button>
                                 <div className="dropbar p-2" uk-drop="stretch: x; target: #message__wrap ;animation: uk-animation-scale-up uk-transform-origin-bottom-left ;animate-out: true; pos: top-left ; offset:2; mode: click ; duration: 200 "> 
                                     <div className="sm:w-60 bg-white shadow-lg border rounded-xl  pr-0 dark:border-slate-700 dark:bg-dark3">
-                                        <h4 className="text-sm font-semibold p-3 pb-0">Send Imogi</h4>
+                                        <h4 className="text-sm font-semibold p-3 pb-0">Send Sticker</h4>
                                         <div className="grid grid-cols-5 overflow-y-auto max-h-44 p-3 text-center text-xl">
                                             <div className="hover:bg-secondery p-1.5 rounded-md hover:scale-125 cursor-pointer duration-200"> 😊 </div>
                                             <div className="hover:bg-secondery p-1.5 rounded-md hover:scale-125 cursor-pointer duration-200"> 🤩 </div>
@@ -103,17 +90,24 @@ export default function HandleInputMs({userData}) {
                                     </div>                                    
                                 </div>
                             </div>
-                           
+                          
                             <div className="relative flex-1">                                
-                                <textarea placeholder="Write your message" rows="1" className="w-full resize-none bg-secondery rounded-full px-4 p-2"
-                               >
-                                </textarea>                                       
+                                <input 
+                                type="text"
+                                name="messageText"
+                                placeholder="Write your message" 
+                                rows="1" 
+                                className="w-full resize-none bg-secondery rounded-full px-4 p-2" 
+                                value={newMessage}
+                                onChange={(e) => setNewMessage(e.target.value)}
+                                onKeyDown={handleKeyPressed}
+                                />                                       
                             </div>
-                            <button type="submit" className="flex h-full dark:text-white">
+                            <button type="submit" className="flex h-full dark:text-white" onClick={handleSendMessage}>
                                 <ion-icon class="text-2xl flex m-2" name="send-outline"></ion-icon> 
-                            </button>                            
+                            </button>                                                       
                         </div>
-                        </form>
+                        
                     
                                       
     

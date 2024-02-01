@@ -1,14 +1,34 @@
 'use client'
 import USidebar from "/components/nav/sidebar"  
 import Rooms from '/components/ui/chat/rooms'
+import { useEffect, useState } from 'react'
+import { callMyProfile, callChatList } from '/components/utils/callApiFunction'
 
 export default function Chat() {
         
+    const [myData, setMyData] = useState([]);
+    const [chatLists, setChatLists] = useState([]); 
   
+
+    useEffect(()=>{
+        const getMyData = async() =>{
+            const queryData = await callMyProfile(); 
+            setMyData(queryData);
+        }
+        getMyData();
+
+        const getMyChat = async () =>{    
+            const queryData = await callChatList();  
+            setChatLists(queryData);                
+        }
+        getMyChat();
+
+    },[]); 
+      
     return (
       <>              
             
-            <USidebar />
+            <USidebar myData={myData} />
 
                   <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small] sm:ml-[--w-side]">
                         <div className="2xl:max-w-6xl mx-auto h-screen relative shadow-lg overflow-hidden border1 max-md:pt-14">
@@ -40,7 +60,7 @@ export default function Chat() {
                                             </div> 
                                         </div>   
                                         
-                                        <Rooms />
+                                        <Rooms chatLists={chatLists} />
                                         
                                     </div>  
 

@@ -1,19 +1,26 @@
-
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import Avatar02 from '/public/assets/images/avatars/avatar-2.jpg'
 import USidebar from "/components/nav/sidebar"  
+import { useEffect, useState } from 'react'
+import { callMyProfile } from '/components/utils/callApiFunction'
 
+export default function Friendship() {
 
-const metadata = {
-    title: 'Matching | Destiny Love',
-  }
+    const [myData, setMyData] = useState([]);
 
+    useEffect(()=>{
+        const getMyData = async() =>{
+            const queryData = await callMyProfile(); 
+            setMyData(queryData);
+        }
+        getMyData();
+    },[]); 
 
-export default function Matching() {
     return (
       <>                   
-        <USidebar />
+        <USidebar myData={myData} />
 
         <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
             <div className="max-w-3xl p-6 mx-auto">                

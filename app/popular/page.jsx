@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -6,15 +7,24 @@ import Avatar02 from '/public/assets/images/avatars/avatar-2.jpg'
 import Reel1 from '/public/assets/images/reels/reels-1.jpg'
 import IconPlay from '/public/assets/images/icon-play.svg'
 
-
-export const metadata = {
-    title: 'Popular | Destiny Love',
-  }
+import { useEffect, useState } from 'react'
+import { callMyProfile } from '/components/utils/callApiFunction'
 
 export default function Popular() {
+
+    const [myData, setMyData] = useState([]);
+
+    useEffect(()=>{
+        const getMyData = async() =>{
+            const queryData = await callMyProfile(); 
+            setMyData(queryData);
+        }
+        getMyData();
+    },[]); 
+
     return  (
         <>
-            <USidebar />
+            <USidebar myData={myData} />
                 <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
                         <div className="main__inner pt-6">   
                             <div className="page__heading">

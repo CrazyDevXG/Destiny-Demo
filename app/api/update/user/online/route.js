@@ -1,4 +1,4 @@
-import { query } from "/components/server/connect/db";
+import { query } from "/server/connect/db";
 
     export async function PUT(request) {
 

@@ -7,42 +7,20 @@ import LogoLight from '/public/assets/images/logo-light.png'
 import { imageLoader } from "/components/utils/loader.js"
 import Notyfi from './notify'
 import Searching from './searching'
-import { useEffect, useState } from 'react'
-import { callMyProfile } from '/components/utils/callApiFunction'
 
 
 
-export default function UserSidebar() {
 
+export default function UserSidebar({myData}) {
 
-    const [myData, setMyData] = useState([]);
-    const uid = myData.user_id;
- 
-    useEffect(()=>{
-        const getMyData = async() =>{
-            const queryData = await callMyProfile(); 
-            setMyData(queryData);
-        }
-        getMyData();
-    }); 
-    
-    useEffect(()=>{
-    function callApiOnline(uid){  
-        fetch(`${process.env.NEXT_API_URL}/update/user/online`, {                   
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ uid })
-    });
-    }    
-    callApiOnline(uid);
-    });
+  
     return (
        <>
             <div className="top-0 left-0 z-40 max-md:top-auto max-md:bottom-0 fixed">
                 <div id="sidebar__inner" className="flex side md:flex-col justify-between md:h-screen md:p-2 p-1 transition-all duration-500 bg-white shadow-md dark:bg-dark2 2xl:w-60 xl:w-60 max-xl:w-[60px] max-md:w-screen max-md:border-t max-md:dark:border-slate-700">
 
                     <div className="flex h-20 px-2 max-md:fixed max-md:top-0 max-md:w-full max-md:bg-white/80 max-md:left-0 max-md:px-4 max-md:h-14 max-md:shadow-sm max-md:dark:bg-slate-900/80 backdrop-blur-xl">
-                        <Link href="/" id="logo" className="flex items-center gap-3">
+                        <Link href="/people" scroll={ false } id="logo" className="flex items-center gap-3">
                             <Image id="logo__icon" src={LogoIcon} width={220} height={220} priority={true} alt="Logo-icon" className="md:w-8 hidden text-2xl max-xl:!block max-md:!hidden shrink-0 uk-animation-scale-up" />
                             <Image id="logo__img" src={LogoDark} width={220} height={220} priority={true} alt="Logo" className="w-full h-10 ml-1 max-xl:hidden max-md:block dark:!hidden" />
                             <Image id="logo__img" src={LogoLight} width={220} height={220} priority={true} alt="Logo" className="w-full h-10 ml-1 !hidden max-xl:!hidden max-md:block dark:max-md:!block dark:!block" />

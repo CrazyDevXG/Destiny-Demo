@@ -1,19 +1,29 @@
-
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import USidebar from "/components/nav/sidebar"  
 
 import Product01 from "/public/assets/images/product/product-1.jpg"
 
-export const metadata = {
-    title: 'Shop | Destiny Love',
-  }
+import { useEffect, useState } from 'react'
+import { callMyProfile } from '/components/utils/callApiFunction'
 
 export default function GiftShop() {
+
+        const [myData, setMyData] = useState([]);
+
+        useEffect(()=>{
+            const getMyData = async() =>{
+                const queryData = await callMyProfile(); 
+                setMyData(queryData);
+            }
+            getMyData();
+        },[]); 
+
+
       return  (
         <>            
-            <USidebar />
-
+        <USidebar myData={myData} />
 
         <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
             <div className="main__inner">                

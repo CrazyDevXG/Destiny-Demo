@@ -16,16 +16,6 @@ export async function middleware(request) {
         throw new Error ('user incorrect')
       }      
 
-      const requestHeaders = new Headers(request.headers)
-      requestHeaders.set('x-data-user', JSON.stringify(payload.user))  
-      
-      const response = NextResponse.next({
-        request: {          
-          headers: requestHeaders,
-        },
-      })
-      
-      return response;
 
       
     }catch (error){

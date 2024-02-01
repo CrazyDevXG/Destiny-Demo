@@ -13,7 +13,6 @@ import { Co_bioStatus } from '/components/ui/profile/Co_status'
 import { Co_Interests } from '/components/ui/profile/Co_interests'
 
 
-
     export default function MyProfile() {  
 
         const [myData, setMyData] = useState({});
@@ -25,12 +24,14 @@ import { Co_Interests } from '/components/ui/profile/Co_interests'
                 setMyData(queryData);
             }
             getMyData();
-        },[]); 
+        },[myData]); 
             
     return (
         <>  
-        <div id="wrapper">             
-            <USidebar />            
+        <div id="wrapper">           
+
+        <USidebar myData={myData} /> 
+
          <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
             <div className="main__inner">           
                 <div className="py-6 relative">

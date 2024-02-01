@@ -18,12 +18,12 @@ export default function MySetting() {
             setMyData(queryData);           
         }
         getMyData();
-    },[]); 
+    },[myData]); 
         
         return (
                 <>  
                 <div id="wrapper">             
-                <USidebar />
+                <USidebar myData={myData} />
 
                  <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
                             <div className="max-w-2xl mx-auto">                              

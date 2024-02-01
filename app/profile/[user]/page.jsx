@@ -4,6 +4,9 @@ import Image from 'next/image'
 import USidebar from "/components/nav/sidebar"  
 import Avatar06 from '/public/assets/images/avatars/avatar-6.jpg'
 
+import { useEffect, useState } from 'react'
+import { callMyProfile } from '/components/utils/callApiFunction.js'
+
 import { PreviewModal } from '/components/ui/profile/Modal_preview'
 
 import { Co_Gallery } from '/components/ui/profile/Co_gallery'
@@ -15,10 +18,20 @@ import { Co_Interests } from '/components/ui/profile/Co_interests'
 
 export default function UserProfile() {  
 
+    const [myData, setMyData] = useState([]);
+
+    useEffect(()=>{
+        const getMyData = async() =>{
+            const queryData = await callMyProfile(); 
+            setMyData(queryData);
+        }
+        getMyData();
+    },[]); 
+
     return (
       <>  
         <div id="wrapper">             
-            <USidebar />            
+            <USidebar myData={myData}/>            
          <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small]">
             <div className="main__inner">           
                 <div className="py-6 relative">
