@@ -67,7 +67,7 @@ export default function Home() {
                                     <Link href={`/profile/${findsData.user_id}`}>
                                         <div className="relative w-30 h-30 mx-auto">                                         
                                             {findsData.user_profile_img ? 
-                                            <Image loader={imageLoader} src={`/${findsData.user_profile_img}`} width={380} height={380} alt="profile" className="w-280 h-280 object-cover rounded shadow"/> 
+                                            <Image loader={imageLoader} src={`/${findsData.user_profile_img}`} width={380} height={380} alt="profile" priority={true} className="w-280 h-280 object-cover rounded shadow"/> 
                                             : null}
                                         </div>
                                     </Link>

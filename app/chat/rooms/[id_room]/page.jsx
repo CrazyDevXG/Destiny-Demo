@@ -4,7 +4,7 @@ import Rooms from '/components/ui/chat/rooms'
 import HeadBarMs from '/components/ui/chat/headMs'
 import ContactMenu from '/components/ui/chat/contactMenu'
 import BoxMessages from '/components/ui/chat/messages'
-import Sticker from "@/components/ui/chat/sticker"
+import Sticker from "/components/ui/chat/sticker"
 import { useEffect, useState } from 'react'
 import { callMyProfile, callChatList, callFriendInfo } from '/components/utils/callApiFunction'
 import { useSearchParams } from 'next/navigation'
@@ -13,7 +13,7 @@ import { io } from 'socket.io-client'
 
 export default function ChatMessages({params}) {
 
-        const socket = io('http://localhost:3010'); 
+        const socket = io('https://2gsw7frf-3010.asse.devtunnels.ms'); 
 
         const [myData, setMyData] = useState([]);
         const [chatLists, setChatLists] = useState([]);  

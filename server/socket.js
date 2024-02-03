@@ -5,7 +5,7 @@ const { Server } = require("socket.io");
 const httpServer = http.createServer();
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3090", // Replace with your frontend URL
+    origin: ["http://localhost:3090", "https://2gsw7frf-3090.asse.devtunnels.ms"], // Replace with your frontend URL
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
