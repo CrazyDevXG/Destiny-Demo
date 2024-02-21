@@ -23,7 +23,10 @@ export async function actionLogin(prevState, formData){
                       redirect('/people')                              
                     }
                     else if(res.status == 401){
-                      return {alerts: 'Invalid email password'}
+                      return {alerts: 'Password incorrect. Please try again'}
+                    }
+                    else if(res.status == 402){
+                      return {alerts: 'Invalid Email Address'}
                     }
                     else if(res.status == 500){
                         return {alerts: res.message}

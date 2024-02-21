@@ -44,7 +44,12 @@ import { Co_Interests } from '/components/ui/profile/Co_interests'
                             <button type="button" className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white shadow p-1.5 rounded-full md:flex hidden"> <ion-icon name="camera" size="small"></ion-icon></button>
                         </div>
                         <div className="max-w-2x flex-1">
-                            <h3 className="md:text-xl text-base font-semibold text-black dark:text-white"><span className='font-semibold text-blue-500'><ion-icon name="shield-checkmark" uk-tooltip="Confirmed Account"></ion-icon></span> {myData.user_fulname}</h3>                              
+                            <h3 className="md:text-xl text-base font-semibold text-black dark:text-white">
+                                <span className={myData.user_activated == 1 ? 'font-semibold text-blue-500 mr-1' : 'font-semibold text-gray-500 mr-1'}>
+                                {myData.user_activated == 1 ? <ion-icon name="shield-checkmark" uk-tooltip="Account Confirmed"></ion-icon> : <ion-icon name="shield-half-outline" uk-tooltip="Non-Activated"></ion-icon>}
+                                </span> 
+                                {myData.user_fulname}
+                                </h3>                              
                             <p className="sm:text-sm text-gray-600 mt-1 font-normal text-xs"><ion-icon name="flash-off"></ion-icon>Offline</p> 
                                                        
                             <Co_bioStatus />  

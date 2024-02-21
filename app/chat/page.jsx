@@ -31,10 +31,10 @@ export default function Chat() {
             <USidebar myData={myData} />
 
                   <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small] sm:ml-[--w-side]">
-                        <div className="2xl:max-w-6xl mx-auto h-screen relative shadow-lg overflow-hidden border1 max-md:pt-14">
+                        <div className="2xl:max-w-4xl md:max-w-3xl md:ml-10 sm:mx-auto h-screen relative shadow-lg overflow-hidden border1 max-md:pt-14">
 
                             <div className="flex bg-white dark:bg-dark2">                    
-                                <div className="md:w-[380px] w-full relative border-r dark:border-slate-700">    
+                                <div className="md:w-[360px] w-full relative border-r dark:border-slate-700">    
                                     <div id="side-chat" className="top-0 left-0  max-md:h-screen bg-white z-50 max-md:shadow  dark:bg-dark2"> 
 
                                         <div className="p-4 border-b dark:border-slate-700">                                

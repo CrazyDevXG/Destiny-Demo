@@ -43,14 +43,13 @@ export async function POST(request) {
                   })                 
                 );
                   
-              } else {
-                return new Response(JSON.stringify({
-                    message: "Invalid email password",            
-                    status: 401,
-                  })
-                );                 
-              }  
-        }       
+                } else {
+                      return new Response(JSON.stringify({                              
+                          status: 401,
+                        })
+                      );                 
+                    }  
+          } 
 
       } catch (error) {
           return new Response(JSON.stringify({

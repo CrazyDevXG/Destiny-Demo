@@ -6,8 +6,8 @@ const nextConfig = {
         MYSQL_NAME: 'destiny_loveDB',
         MYSQL_USER: 'crazydev_dsLove',
         MYSQL_PASSWD: 'fwI$2735e',
-        NEXT_API_URL: 'https://2gsw7frf-3090.asse.devtunnels.ms/api',
-        NEXT_IMG_LOADER: 'https://2gsw7frf-3090.asse.devtunnels.ms/assets/images',
+        NEXT_API_URL: 'http://localhost:3090/api',
+        NEXT_IMG_LOADER: 'http://localhost:3090/assets/images',
         NEXTAUTH_SECRET: 'CrazyDev_NextJS_DestinyLove',
       },
 
