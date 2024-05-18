@@ -1,5 +1,6 @@
 /**@type {import('next').NextConfig}*/
 const nextConfig = {
+    reactStrictMode: false,
     env: {       
         MYSQL_HOST: 'thsv75.hostatom.com',
         MYSQL_PORT: '3306',

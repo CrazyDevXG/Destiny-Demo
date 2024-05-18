@@ -9,70 +9,74 @@ import ContactMenu from '/components/ui/chat/contactMenu'
 import BoxMessages from '/components/ui/chat/messages'
 import Sticker from "/components/ui/chat/sticker"
 import { useEffect, useState } from 'react'
-import { callMyProfile, callChatList, callFriendInfo } from '/components/utils/callApiFunction'
+import { callMyProfile, callChatList, callFriendInfo, callMessagesStored } from '/components/utils/callApiFunction'
 import { useSearchParams } from 'next/navigation'
 import { io } from 'socket.io-client'
 
 
 export default function ChatMessages({params}) {
 
-        const socket = io('http://localhost:3090'); 
+        const socket = io('http://localhost:3010'); 
 
         const [myData, setMyData] = useState([]);
         const [chatLists, setChatLists] = useState([]);  
         const [friendInfo, setFriendInfo] = useState([]);
 
-        const [newMessage, setNewMessage] = useState('');        
+        const [newMessage, setNewMessage] = useState('');
+        const [oldMessages, setOldMessages] = useState([]);        
         const [messages, setMessages] = useState([]);
         
         const [fileImg, setFileImg] = useState();
-        const [srcPhoto, setSrcPhoto] = useState([]);
+       
 
         const searchParams = useSearchParams();
         const friendId = searchParams.get('idFN');        
         const roomId = params.id_room;
         const userId = myData.user_id;
 
-        const joinrChat = () =>{
-            socket.emit("join_room", roomId);
+        const joinRoomChat = async () =>{
+            return socket.emit("join_room", roomId);
+         }
+
+         const getMyChat = async () =>{    
+            const queryMyChat = await callChatList();  
+            setChatLists(queryMyChat);                
         }
-       
 
-        useEffect(()=>{
-            const getMyData = async() =>{
-                const queryData = await callMyProfile(); 
-                setMyData(queryData);
-            }
-            getMyData();
+        const getMyTextMessage = async () =>{    
+            const queryMyTextMS = await callMessagesStored({roomId});  
+            setOldMessages(queryMyTextMS);                
+        }
 
-            const getMyChat = async () =>{    
-                const queryMyChat = await callChatList();  
-                setChatLists(queryMyChat);                
-            }
-            getMyChat();        
+        const getMyData = async() =>{
+            const queryData = await callMyProfile(); 
+            setMyData(queryData);
+        }
 
-            joinrChat();
-
-        },[roomId]);  
-
-        
-    useEffect(()=>{ 
         const getMyFriendInfo = async () =>{    
             const queryFriendInfo = await callFriendInfo({friendId});  
             setFriendInfo(queryFriendInfo);                
         }
-        getMyFriendInfo();         
 
-    },[friendId]); 
+        useEffect( () => {
+
+            getMyData();
+            getMyTextMessage();
+            getMyChat();        
+            joinRoomChat();           
+
+        },[roomId]);  
+
+        
+    useEffect( () => { getMyFriendInfo(); },[friendId]); 
     
-    useEffect(() => {
+    useEffect( () => {
        
         socket.on("receive_msg", (data) => {
             setMessages((prevMessages) => [...prevMessages, data]);
         });         
         
- 
-      }, [socket]);
+      },[socket]);
 
 
         const sendMessage = () => {
@@ -135,7 +139,7 @@ export default function ChatMessages({params}) {
 
                   <main className="2xl:ml-[--w-side] xl:ml-[--w-side-md] md:ml-[--w-side-small] sm:ml-[--w-side]">
 
-                        <div className="2xl:max-w-4xl md:max-w-3xl md:ml-10 sm:mx-auto h-screen relative shadow-lg overflow-hidden border1 max-md:pt-14">
+                        <div className="2xl:max-w-5xl md:max-w-3xl md:ml-10 sm:mx-auto h-screen relative shadow-lg overflow-hidden border1 max-md:pt-14">
                             <div className="flex bg-white dark:bg-dark2">                    
                                 <div className="md:w-[310px] xl:w-[340px] relative border-r dark:border-slate-700">    
                                 <div id="side-chat" className="top-0 left-0 max-md:fixed max-md:w-5/6 max-md:h-screen bg-white z-50 max-md:shadow max-md:-translate-x-full dark:bg-dark2">                                
@@ -173,7 +177,7 @@ export default function ChatMessages({params}) {
                     <div className="flex-1"> 
                                     <HeadBarMs friendInfo={friendInfo} />
                                     
-                                    <BoxMessages messages={messages} srcPhoto={srcPhoto} myData={myData} friendInfo={friendInfo} />
+                                    <BoxMessages oldMessages={oldMessages} messages={messages} myData={myData} friendInfo={friendInfo} />
 
 
 

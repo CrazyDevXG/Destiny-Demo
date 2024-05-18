@@ -2,11 +2,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import date from 'date-and-time'
-import { useEffect, useRef, useState  } from 'react'
+import { useEffect, useRef  } from 'react'
 import { imageLoader } from "/components/utils/loader.js"
 
 
-export default function BoxMessages({ messages, srcPhoto, myData, friendInfo}) {  
+export default function BoxMessages({oldMessages, messages, myData, friendInfo}) {  
 
     const refLastMessages = useRef(null);  
     const scrollToBottom = () =>{
@@ -33,6 +33,24 @@ export default function BoxMessages({ messages, srcPhoto, myData, friendInfo}) {
                                     </div>                             
                                 </div> 
 
+                            { oldMessages.map((oldMessages) => (   
+                                <div className={oldMessages.mes_uid == myData.user_id ? 'flex gap-2 flex-row-reverse items-end' : 'flex gap-3'} key={oldMessages.mes_id} >
+                                    {oldMessages.mes_uid !== myData.user_id ? 
+                                    <Image loader={imageLoader} src={`/${friendInfo.user_profile_img}`} width={80} height={80} alt="profile" className="w-9 h-9 rounded-full shadow"/> 
+                                    : null} 
+                                     
+
+                                    <div className={oldMessages.mes_uid == myData.user_id ? 
+                                    'px-4 py-2 rounded-[20px] max-w-sm bg-gradient-to-tr from-pink-400 to-red-400 text-white shadow' : 
+                                    'px-4 py-2 rounded-[20px] max-w-sm bg-secondery'}
+                                    >{oldMessages.mes_text}
+                                    </div>
+
+                                    <div className="text-gray-400 text-xs dark:text-white/70">{date.format(new Date(oldMessages.mes_time), 'HH:mm')}</div> 
+                                </div>  
+                            ))}
+
+
                             { messages.map((messages, key) => (   
                                 <div className={messages.userId == myData.user_id ? 'flex gap-2 flex-row-reverse items-end' : 'flex gap-3'} key={key} ref={refLastMessages} >
                                     {messages.userId !== myData.user_id ? 
@@ -50,17 +68,7 @@ export default function BoxMessages({ messages, srcPhoto, myData, friendInfo}) {
                                 </div>  
                             ))}
 
-                            { srcPhoto.map((srcPhoto, key) => (
-                                <div key={key}>
-                                <div className={srcPhoto.userId == myData.user_id ? 
-                                    'px-4 py-2 rounded-[20px] max-w-sm bg-gradient-to-tr from-pink-400 to-red-400 text-white shadow' : 
-                                    'px-4 py-2 rounded-[20px] max-w-sm bg-secondery'}
-                                    >
-                                {srcPhoto.photo ? <Image src={srcPhoto.photo}  width={240} height={110} /> : null}
-                                </div>
-                                </div>
-                            ))}
-                                
+                            
                             </div>
                             <div id="side-chat" className="bg-slate-100/40 backdrop-blur w-full h-full dark:bg-slate-800/40 z-40 fixed inset-0 max-md:-translate-x-full md:hidden" uk-toggle="target: #side-chat ; cls: max-md:-translate-x-full"></div>
                         </div>                                           

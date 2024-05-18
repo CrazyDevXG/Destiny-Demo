@@ -47,12 +47,12 @@ export default function UserSidebar({myData}) {
                         </Link>
 
 
-                        <Link href="/popular" scroll={ false }>                            
+                        <Link href="/coming-soon" scroll={ false }>                            
                             <ion-icon name="sparkles-outline" class="text-2xl"></ion-icon>
                             <span className="max-xl:hidden"> Most Popular </span>
                         </Link>
 
-                        <Link href="/shop" className="max-md:!hidden" scroll={ false }>
+                        <Link href="/coming-soon" className="max-md:!hidden" scroll={ false }>
                         <ion-icon name="storefront-outline" class="text-2xl"></ion-icon>
                             <span className="max-xl:hidden"> Lovely Stores </span>
                         </Link> 
