@@ -1,9 +1,9 @@
 {
-  "name": "destiny-next14",
-  "version": "0.1.0",
+  "name": "destiny-love",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3090 && node server/socket.js",
+    "dev": "next dev -p 3090",
     "build": "next build",
     "start": "next start -p 3090",
     "lint": "next lint",
