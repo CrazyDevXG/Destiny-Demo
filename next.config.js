@@ -15,8 +15,8 @@ const nextConfig = {
       experimental: {
         serverActions: {
           allowedOrigins: [
-            "2gsw7frf-3090.asse.devtunnels.ms", "localhost:3090",
-            "2gsw7frf-3010.asse.devtunnels.ms", "localhost:3010"
+            "destinylove.online:3090", "localhost:3090",
+            "destinylove.online:5010", "localhost:5010"
         ]
         }
       }

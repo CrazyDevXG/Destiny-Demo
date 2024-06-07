@@ -38,6 +38,6 @@ const io = new Server(httpServer, {
 
 
 
-httpServer.listen(3010, () => {
-  console.log(`Socket.io server is running on port 3010`);
+httpServer.listen(5010, () => {
+  console.log(`Socket.io server is running on port 5010`);
 });

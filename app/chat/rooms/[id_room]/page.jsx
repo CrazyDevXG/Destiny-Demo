@@ -16,7 +16,7 @@ import { io } from 'socket.io-client'
 
 export default function ChatMessages({params}) {
 
-        const socket = io('http://localhost:3010'); 
+        const socket = io('http://localhost:5010'); 
 
         const [myData, setMyData] = useState([]);
         const [chatLists, setChatLists] = useState([]);  
